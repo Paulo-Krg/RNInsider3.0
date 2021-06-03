@@ -19,3 +19,12 @@ Linear Gradient:
 
 Manipular clipboard do aparelho:
 >expo install expo-clipboard
+
+Documentação da API do Bitly:
+>https://dev.bitly.com/api-reference#createBitlink
+
+TOKEN:
+b640d6b5d01879b34e0403bd924f50c12a53ac36
+
+Biblioteca para realizar requisições HTTP:
+>expo install axios

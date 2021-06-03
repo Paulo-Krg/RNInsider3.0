@@ -1,6 +1,4 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-
 import { Container, Title, ListLinks } from './styles';
 
 import Menu from '../../components/Menu';
@@ -23,7 +21,7 @@ export default function MyLinks() {
                 data={[{ id: 1, link: 'test.com' }]}
                 keyExtractor={(item) => String(item.id)}
                 renderItem={({ item }) => <ListItem data={item} />}
-                contentContainerStyle={{ paddingBottom: 20 }}
+                contentContainerStyle={{ paddingBottom: 25 }}
                 showsVerticalScrollIndicator={false}
             />
         </Container>
