@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonMenu } from './styles';
+import { ButtonMenu } from './MenuStyles';
 
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';

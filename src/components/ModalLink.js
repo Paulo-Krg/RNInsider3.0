@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TouchableWithoutFeedback, Share } from 'react-native';
 
-import { ModalContainer, Container, Header, LinkArea, Title, LongUrl, ShortLinkArea, ShortLinkUrl } from './styles';
+import { ModalContainer, Container, Header, LinkArea, Title, LongUrl, ShortLinkArea, ShortLinkUrl } from './ModalLinkStyles';
 import { Feather } from '@expo/vector-icons';
 import Clipboard from 'expo-clipboard';
 

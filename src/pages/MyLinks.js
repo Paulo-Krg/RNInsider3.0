@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Modal, ActivityIndicator } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
-import { Container, Title, ListLinks, ContainerEmpty, WarningText } from './styles';
+import { Container, Title, ListLinks, ContainerEmpty, WarningText } from './MyLinksStyles';
 
-import Menu from '../../components/Menu';
-import ListItem from '../../components/ListItem';
-import StatusBarPage from '../../components/StatusBarPage';
-import ModalLink from '../../components/ModalLink';
+import Menu from '../components/Menu';
+import ListItem from '../components/ListItem';
+import StatusBarPage from '../components/StatusBarPage';
+import ModalLink from '../components/ModalLink';
 
-import { getLinksSave, deleteLink } from '../../utils/storeLinks';
+import { getLinksSave, deleteLink } from '../utils/storeLinks';
 
 export default function MyLinks() {
     const isFocused = useIsFocused();

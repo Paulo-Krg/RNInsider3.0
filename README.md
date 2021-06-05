@@ -1,8 +1,8 @@
 ## Criação
-expo init mylink
+>expo init mylink
 
 ## Dev dependencies
-yarn add styled-components
+>yarn add styled-components
 
 React navigation documentation:
 >https://reactnavigation.org/docs/getting-started/

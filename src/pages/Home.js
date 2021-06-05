@@ -3,15 +3,15 @@ import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, Mod
 
 import { LinearGradient } from 'expo-linear-gradient';
 
-import StatusBarPage from '../../components/StatusBarPage';
-import Menu from '../../components/Menu';
-import ModalLink from '../../components/ModalLink';
+import StatusBarPage from '../components/StatusBarPage';
+import Menu from '../components/Menu';
+import ModalLink from '../components/ModalLink';
 
 import { Feather } from '@expo/vector-icons';
-import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, ContainerInput, BoxIcon, Input, ButtonLink, ButtonLinkText } from './styles';
+import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, ContainerInput, BoxIcon, Input, ButtonLink, ButtonLinkText } from './HomeStyles';
 
-import api from '../../services/api';
-import { saveLink } from '../../utils/storeLinks';
+import api from '../services/api';
+import { saveLink } from '../utils/storeLinks';
 
 export default function Home() {
 
@@ -70,7 +70,7 @@ export default function Home() {
                 >
 
                     <ContainerLogo>
-                        <Logo source={require('../../images/Logo.png')} resizeMode="contain" />
+                        <Logo source={require('../images/Logo.png')} resizeMode="contain" />
                     </ContainerLogo>
 
                     <ContainerContent>
