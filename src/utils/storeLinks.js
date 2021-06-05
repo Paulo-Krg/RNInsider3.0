@@ -32,7 +32,7 @@ export async function deleteLink(links, id){
         return (item.id !== id)
     });
 
-    await AsyncStorage.setItem('1', JSON.stringify(myLinks));
+    await AsyncStorage.setItem('sujeitolinks', JSON.stringify(myLinks));
 
     console.log('LINK DELETADO');
 

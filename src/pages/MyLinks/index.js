@@ -21,7 +21,7 @@ export default function MyLinks() {
 
     useEffect(() => {
         async function getLinks() {
-            const result = await getLinksSave('1');
+            const result = await getLinksSave('sujeitolinks');
             setLinks(result);
             setLoading(false);
         }

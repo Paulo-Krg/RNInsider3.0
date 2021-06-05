@@ -34,7 +34,7 @@ export default function Home() {
             setModalVisible(true);
 
             // salvar dados no async storage
-            saveLink('1', response.data);
+            saveLink('sujeitolinks', response.data);
 
             Keyboard.dismiss();
             setLoading(false);
