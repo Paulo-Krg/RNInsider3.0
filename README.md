@@ -28,3 +28,6 @@ b640d6b5d01879b34e0403bd924f50c12a53ac36
 
 Biblioteca para realizar requisições HTTP:
 >expo install axios
+
+Persistencia de dados no async storage:
+>expo install @react-native-async-storage/async-storage

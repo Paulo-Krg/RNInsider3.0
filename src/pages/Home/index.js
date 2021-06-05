@@ -11,6 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, ContainerInput, BoxIcon, Input, ButtonLink, ButtonLinkText } from './styles';
 
 import api from '../../services/api';
+import { saveLink } from '../../utils/storeLinks';
 
 export default function Home() {
 
@@ -30,8 +31,11 @@ export default function Home() {
             })
 
             setData(response.data);
-
             setModalVisible(true);
+
+            // salvar dados no async storage
+            saveLink('1', response.data);
+
             Keyboard.dismiss();
             setLoading(false);
             setInput('');   // limpar automaticamente o input

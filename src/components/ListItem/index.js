@@ -1,21 +1,37 @@
 import React from 'react';
 import { View } from 'react-native';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import { Feather } from '@expo/vector-icons';
 
-import { ContainerButton, Item } from './styles';
+import { ContainerButton, Item, ActionContainer } from './styles';
 
-export default function ListItem() {
+export default function ListItem({ data, selectedItem, deleteItem }) {
+
+    function RightActions(){
+        return(
+            <ActionContainer onPress={() => deleteItem(data.id) }>
+                <Feather
+                name="trash"
+                color="#FFF"
+                size={24}
+                />
+            </ActionContainer>
+        );
+    }
+
     return (
         <View>
-            <ContainerButton activeOpacity={0.6} onPress={ () => {} } >
-                <Feather
-                    name="link"
-                    color="#FFF"
-                    size={24}
-                />
-                <Item numberOfLines={1} >https://youtube.com</Item>
-            </ContainerButton>
+            <Swipeable renderRightActions={RightActions}>
+                <ContainerButton activeOpacity={0.6} onPress={() => selectedItem(data)} >
+                    <Feather
+                        name="link"
+                        color="#FFF"
+                        size={24}
+                    />
+                    <Item numberOfLines={1} >{data.long_url}</Item>
+                </ContainerButton>
+            </Swipeable>
         </View>
     )
 }
