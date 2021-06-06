@@ -1,8 +1,8 @@
 ## Creation
-- >node -v
-- >npm install -g expo-cli
-  - >expo --version
-- >expo init mylinkshortener
+- `node -v`
+- `npm install -g expo-cli`
+  - `expo --version`
+- `expo init mylinkshortener`
   - blank template
 
 ## Documentation
@@ -16,25 +16,25 @@
 - RN vector icons: https://oblador.github.io/react-native-vector-icons/
 
 ## Dev dependencies
-- >yarn add styled-components
-- >yarn add @react-navigation/native
-- >expo install react-native-gesture-handler
-- >expo install react-native-reanimated
-- >expo install react-native-screens
-- >expo install react-native-safe-area-context
-- >expo install @react-native-community/masked-view
+- `yarn add styled-components`
+- `yarn add @react-navigation/native`
+- `expo install react-native-gesture-handler`
+- `expo install react-native-reanimated`
+- `expo install react-native-screens`
+- `expo install react-native-safe-area-context`
+- `expo install @react-native-community/masked-view`
 - Drawer navigation:
-  - >yarn add @react-navigation/drawer
+  - `yarn add @react-navigation/drawer`
 - Linear Gradient:
-  - >expo install expo-linear-gradient
+  - `expo install expo-linear-gradient`
 - Manipular clipboard do aparelho:
-  - >expo install expo-clipboard
+  - `expo install expo-clipboard`
 - Biblioteca para realizar requisições HTTP:
-  - >expo install axios
+  - `expo install axios`
 - Persistencia de dados no async storage:
-  - >expo install @react-native-async-storage/async-storage
+  - `expo install @react-native-async-storage/async-storage`
 - Abrir webview integrado:
-  - >expo install react-native-webview
+  - `expo install react-native-webview`
 
 ## Running the application on your local machine
 1. Clone the repository to your local machine using `git clone`
