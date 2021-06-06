@@ -13,5 +13,4 @@ export default function Menu() {
             <Feather name="menu" size={40} color="#FFF" />
         </ButtonMenu>
     )
-
 }

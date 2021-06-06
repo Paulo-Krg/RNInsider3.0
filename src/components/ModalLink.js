@@ -63,7 +63,7 @@ export default function ModalLink({ onClose, data }) {
                 <LinkArea>
                     <Title>Link encurtado</Title>
                     <LongUrl
-                        // numberOfLines={1}    // exibir apenas 1 linha
+                    // numberOfLines={1}    // exibir apenas 1 linha
                     >
                         {data.long_url}
                     </LongUrl>
