@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Buscar os links salvos
-export async function getLinksSave(key){
+export async function getLinksSave(key) {
     const myLinks = await AsyncStorage.getItem(key);
 
     let linkSaves = JSON.parse(myLinks) || [];
@@ -10,13 +10,13 @@ export async function getLinksSave(key){
 }
 
 // Salvar um link no storage
-export async function saveLink(key, newLink){
+export async function saveLink(key, newLink) {
     let linksStored = await getLinksSave(key);
 
     //Verificar se há um link igual já salvo na lista
     const hasLink = linksStored.some(link => link.id === newLink.id);
 
-    if (hasLink){
+    if (hasLink) {
         console.log('ESSE LINK JA EXISTE NA LISTA.')
         return;
     }
@@ -27,8 +27,8 @@ export async function saveLink(key, newLink){
 }
 
 // Deletar algum link especifico
-export async function deleteLink(links, id){
-    let myLinks = links.filter( (item) => {
+export async function deleteLink(links, id) {
+    let myLinks = links.filter((item) => {
         return (item.id !== id)
     });
 

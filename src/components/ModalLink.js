@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, TouchableWithoutFeedback, Share } from 'react-native';
+import { View, TouchableOpacity, TouchableWithoutFeedback, Share } from 'react-native';
 
 import { ModalContainer, Container, Header, LinkArea, Title, LongUrl, ShortLinkArea, ShortLinkUrl } from './ModalLinkStyles';
 import { Feather } from '@expo/vector-icons';
@@ -33,6 +33,7 @@ export default function ModalLink({ onClose, data }) {
             console.log(error.message);
         }
     }
+    // console.log(data);
 
     return (
         <ModalContainer>
@@ -62,9 +63,9 @@ export default function ModalLink({ onClose, data }) {
                 <LinkArea>
                     <Title>Link encurtado</Title>
                     <LongUrl
-                        numberOfLines={1}
+                        // numberOfLines={1}    // exibir apenas 1 linha
                     >
-                        {data.LongUrl}
+                        {data.long_url}
                     </LongUrl>
 
                     <ShortLinkArea

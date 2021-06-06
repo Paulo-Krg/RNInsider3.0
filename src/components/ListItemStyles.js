@@ -7,7 +7,9 @@ export const ContainerButton = styled.TouchableOpacity`
     margin: 7px 10px;
     padding: 12px;
     border-radius: 7px;
+    align-items: center;
 `;
+
 
 export const Item = styled.Text`
     color: #FFF;

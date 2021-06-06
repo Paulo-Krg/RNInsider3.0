@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, ActivityIndicator } from 'react-native';
+import { Modal, ActivityIndicator, Alert } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import { Container, Title, ListLinks, ContainerEmpty, WarningText } from './MyLinksStyles';
@@ -30,13 +30,30 @@ export default function MyLinks() {
 
     }, [isFocused]);
 
-    function handleItem(item){
+    function handleItem(item) {
         //console.log(item);
         setData(item);
         setModalVisible(true);
     }
 
-    async function handleDelete(id){
+    function confirmDelete(id){
+        Alert.alert(
+            "Excluir link?",
+            "",
+            [
+                {
+                    text: "Cancelar",
+                    // onPress: () => console.log("Cancel Pressed"),
+                },
+                {
+                    text: "OK",
+                    onPress: () => {handleDelete(id)},
+                }
+            ]
+        );
+    }
+
+    async function handleDelete(id) {
         //console.log('item deletado: ' + id);
         const result = await deleteLink(links, id);
         setLinks(result);
@@ -53,20 +70,21 @@ export default function MyLinks() {
 
             <Title>Meus Links</Title>
 
-        { loading && (
-            <ActivityIndicator color='#FFF' size={25}/>
-        )}
+            { loading && (
+                <ActivityIndicator color='#FFF' size={25} />
+            )}
 
-        {!loading && links.length === 0 && (
-            <ContainerEmpty>
-                <WarningText>Você não possui nenhum link :(</WarningText>
-            </ContainerEmpty>
-        )}
+            {!loading && links.length === 0 && (
+                <ContainerEmpty>
+                    <WarningText>Você não possui nenhum link :(</WarningText>
+                </ContainerEmpty>
+            )}
 
             <ListLinks
                 data={links}
                 keyExtractor={(item) => String(item.id)}
-                renderItem={({ item }) => <ListItem data={item} selectedItem={handleItem} deleteItem={handleDelete} />}
+                renderItem={({ item }) => <ListItem data={item} selectedItem={handleItem} deleteItem={confirmDelete} />}
+                data-confirm="Are you sure to delete this item?"
                 contentContainerStyle={{ paddingBottom: 25 }}
                 showsVerticalScrollIndicator={false}
             />

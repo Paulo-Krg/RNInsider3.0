@@ -40,26 +40,35 @@ export const ContainerInput = styled.View`
     padding-right: 15px;
 `;
 
-export const BoxIcon = styled.View`
+export const IconLeft = styled.View`
     align-items: center;
     justify-content: center;
     padding-left: 10px;
-    width: 11%;
+    width: 10%;
     height: 50px;
     background-color: rgba(255,255,255,0.15);
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 `;
 
-export const Input = styled.TextInput`
+export const IconRight = styled.View`
     align-items: center;
     justify-content: center;
-    width: 90%;
+    padding-right: 10px;
+    width: 10%;
     height: 50px;
-    padding: 10px;
     background-color: rgba(255,255,255,0.15);
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
+`;
+
+export const Input = styled.TextInput`
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.15);
     font-size: 17px;
     
     color: #FFFFFF;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, Modal, ActivityIndicator } from 'react-native';
+import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, Modal, ActivityIndicator, TouchableOpacity } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -8,7 +8,7 @@ import Menu from '../components/Menu';
 import ModalLink from '../components/ModalLink';
 
 import { Feather } from '@expo/vector-icons';
-import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, ContainerInput, BoxIcon, Input, ButtonLink, ButtonLinkText } from './HomeStyles';
+import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, ContainerInput, IconLeft, IconRight, Input, ButtonLink, ButtonLinkText } from './HomeStyles';
 
 import api from '../services/api';
 import { saveLink } from '../utils/storeLinks';
@@ -26,8 +26,18 @@ export default function Home() {
 
         setLoading(true);
         try {
+            let aux = "https://";
+
+            if ((input.substring(0, 8) != "https://") && input.substring(0, 7) != "http://") {
+                aux = aux.concat(input);
+                // console.log("não tem https://\n\tinput = " + input + "\n\taux = " + aux);
+            } else {
+                // console.log("já tem https://");
+                aux = input;
+            }
+
             const response = await api.post('/shorten', {
-                long_url: input,
+                long_url: aux,
             })
 
             setData(response.data);
@@ -40,7 +50,7 @@ export default function Home() {
             setLoading(false);
             setInput('');   // limpar automaticamente o input
 
-        } catch(error) {
+        } catch (error) {
             console.log(error.message);
             alert('Ops, parece que algo deu errado!');
             Keyboard.dismiss();
@@ -78,18 +88,26 @@ export default function Home() {
                         <SubTitle>Cole seu link para encurtar</SubTitle>
 
                         <ContainerInput>
-                            <BoxIcon>
+                            <IconLeft>
                                 <Feather name="link" size={22} color="#FFF" />
-                            </BoxIcon>
+                            </IconLeft>
                             <Input
                                 placeholder="Cole seu link aqui..."
                                 placeholderTextColor="rgba(255, 255, 255, 0.40)"
                                 autoCapitalize="none"
                                 autoCorrect={false}
+                                selectionColor="rgba(255,255,255,0.7)"
                                 keyboardType="url"
                                 value={input}
                                 onChangeText={(text) => setInput(text)}
                             />
+
+                            <IconRight>
+                                <TouchableOpacity onPress={() => setInput('') }>
+                                    <Feather name="x" size={22} color="#FFF" />
+                                </TouchableOpacity>
+                            </IconRight>
+
                         </ContainerInput>
 
                         <ButtonLink onPress={handleShortLink} >
@@ -114,6 +132,6 @@ export default function Home() {
                 </Modal>
 
             </LinearGradient>
-        </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback >
     )
 }

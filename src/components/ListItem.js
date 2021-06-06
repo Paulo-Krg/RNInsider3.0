@@ -29,7 +29,7 @@ export default function ListItem({ data, selectedItem, deleteItem }) {
                         color="#FFF"
                         size={24}
                     />
-                    <Item numberOfLines={1} >{data.long_url}</Item>
+                    <Item>{data.long_url}</Item>
                 </ContainerButton>
             </Swipeable>
         </View>
