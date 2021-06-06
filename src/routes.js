@@ -15,7 +15,7 @@ function Routes() {
                 activeBackgroundColor: '#2ccbb9',
                 activeTintColor: '#FFF',
                 marginTop: 16,
-                labelStyle:{
+                labelStyle: {
                     fontSize: 19,
                 }
             }}

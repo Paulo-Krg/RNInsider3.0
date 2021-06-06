@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-    margin-top: ${Platform.OS === 'ios' ? 35+'%' : 20+'%'};
+    margin-top: ${Platform.OS === 'ios' ? 35 + '%' : 20 + '%'};
     margin-left: 20px;
     font-size: 33px;
     font-weight: bold;
@@ -26,4 +26,16 @@ export const ContainerEmpty = styled.View`
 export const WarningText = styled.Text`
     font-size: 17px;
     color: #FFF;
+`;
+
+export const WebViewHeader = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+`;
+
+export const LinkText = styled.Text`
+    color: #FFF;
+    font-size: 17px;
 `;

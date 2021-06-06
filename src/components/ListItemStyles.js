@@ -18,7 +18,7 @@ export const Item = styled.Text`
     font-size: 18px;
 `;
 
-export const ActionContainer = styled.TouchableOpacity`
+export const ActionContainerRight = styled.TouchableOpacity`
     width: 15%;
     background-color: #FF5555;
     border-radius: 7px;
@@ -27,6 +27,11 @@ export const ActionContainer = styled.TouchableOpacity`
     margin: 7px 10px;
 `;
 
-
-
-
+export const ActionContainerLeft = styled.TouchableOpacity`
+    width: 15%;
+    background-color: #1DDBB9;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    margin: 7px 10px;
+`;
