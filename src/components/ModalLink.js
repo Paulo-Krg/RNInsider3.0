@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, TouchableWithoutFeedback, Share } from 'react-native';
+import { View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
 import { ModalContainer, Container, Header, LinkArea, Title, LongUrl, ShortLinkArea, ShortLinkUrl } from './ModalLinkStyles';
 import { Feather } from '@expo/vector-icons';
 import Clipboard from 'expo-clipboard';
+
+import handleShare from '../utils/handleShare';
 
 export default function ModalLink({ onClose, data }) {
 
@@ -11,29 +13,6 @@ export default function ModalLink({ onClose, data }) {
         Clipboard.setString(data.link);
         alert('Link copiado com sucesso!');
     }
-
-    async function handleShare() {
-        try {
-            const result = await Share.share({
-                message: `Link: ${data.link}`
-            });
-
-            if (result.action === Share.sharedAction) {
-                if (result.activityType) {
-                    console.log('ActivityType');
-                } else {
-                    //compartilhou
-                    console.log('Compartilhado com sucesso!');
-                }
-            } else if (result.action === Share.dismissedAction) {
-                console.log('Modal fechado')
-            }
-
-        } catch (error) {
-            console.log(error.message);
-        }
-    }
-    // console.log(data);
 
     return (
         <ModalContainer>
@@ -51,7 +30,7 @@ export default function ModalLink({ onClose, data }) {
                             size={30}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={handleShare}>
+                    <TouchableOpacity onPress={() => handleShare(data)}>
                         <Feather
                             name="share"
                             color="#212743"

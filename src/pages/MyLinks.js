@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
+import WebView from 'react-native-webview';
 
 import { Feather } from '@expo/vector-icons';
 
@@ -12,7 +13,7 @@ import StatusBarPage from '../components/StatusBarPage';
 import ModalLink from '../components/ModalLink';
 
 import { getLinksSave, deleteLink } from '../utils/storeLinks';
-import WebView from 'react-native-webview';
+import handleShare from '../utils/handleShare';
 
 export default function MyLinks() {
     const isFocused = useIsFocused();
@@ -109,9 +110,6 @@ export default function MyLinks() {
                 :
                 <>
                     <WebViewHeader>
-                        <LinkText>
-                            {uri}
-                        </LinkText>
                         <TouchableOpacity onPress={() => setWebViewVisible(false)} >
                             <Feather
                                 name="x"
@@ -119,15 +117,18 @@ export default function MyLinks() {
                                 size={40}
                             />
                         </TouchableOpacity>
-
-                        {/* <TouchableOpacity >
+                        <LinkText>
+                            {uri}
+                        </LinkText>
+                        <TouchableOpacity onPress={() => handleShare(data)}>
                             <Feather
                                 name="share"
                                 color="#FFF"
                                 size={30}
                             />
-                        </TouchableOpacity> */}
+                        </TouchableOpacity>
                     </WebViewHeader>
+
                     <WebView
                         source={{ uri: uri }}
                     />
