@@ -1,10 +1,9 @@
 import axios from 'axios';
+import token from '../config';
 
-// key b640d6b5d01879b34e0403bd924f50c12a53ac36
-export const key = 'b640d6b5d01879b34e0403bd924f50c12a53ac36';
+export const key = token.BitlyApiToken;
 
 // base URL: https://api-ssl.bitly.com/v4
-
 const api = axios.create({
     baseURL: 'https://api-ssl.bitly.com/v4',
     headers: {
