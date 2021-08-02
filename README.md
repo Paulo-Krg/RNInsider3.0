@@ -51,11 +51,15 @@ Table of contents
   - `expo install react-native-webview`
 
 ### Running the application
-On your local machine
+#### On your local machine
 1. Clone the repository to your local machine using `git clone`
-1. Run `yarn` in the project root
+1. Run `yarn` to install project dependencies
 1. Run `yarn start` to start the expo server
-1. Follow the instructions to open it with the [Expo app](https://expo.io/)
+1. Read the QR Code with your mobile [Expo app](https://expo.io/)
 
 #### In your web browser
-1. 
+1. Open the Gitpod link: https://gitpod.io/#https://github.com/Paulo-Krg/RNInsider3.0
+1. Run `yarn` in the integrated IDE's terminal
+1. Run `yarn start` to start the expo server
+1. Read the QR Code with your mobile [Expo app](https://expo.io/)
+1. Don't forget to <strong>Stop the Workspace<strong> when you leave!
